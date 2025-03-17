@@ -16,7 +16,6 @@ app.use(express.urlencoded({ extended: false }));
 app.get("/", (req, res) => {
   res.json({ message: "Hello World" });
 });
-
 app.use("/api", userRoutes);
 
 module.exports = app;
