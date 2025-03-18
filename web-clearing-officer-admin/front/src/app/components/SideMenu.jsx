@@ -8,6 +8,7 @@ import {
   Settings,
   User,
   ChartNoAxesCombined,
+  Calendar,
 } from "lucide-react";
 import { Avatar, AvatarImage, AvatarFallback } from "@/components/ui/avatar";
 
@@ -29,6 +30,7 @@ const CustomSideMenu = () => {
       label: "Requirements",
       icon: <FileText />,
     },
+    { href: "/departmentClearance/event", label: "Events", icon: <Calendar /> },
     {
       href: "/departmentClearance/acc",
       label: "Account Settings",
