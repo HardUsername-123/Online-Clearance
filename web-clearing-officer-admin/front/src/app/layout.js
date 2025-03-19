@@ -1,28 +1,28 @@
-"use client";
-
 import { Outfit } from "next/font/google";
 import "./globals.css";
 import React from "react";
 import { Toaster } from "@/components/ui/sonner";
+import Head from "next/head";
 
 const outfit = Outfit({ subsets: ["latin"] });
 
-const metadata = {
+export const metadata = {
   title: "ASCS",
   description: "An Automated Student Clearance System.",
   icons: {
-    icon: "/web.png",
+    icon: "/old-logo.ico",
   },
 };
 
 export default function RootLayout({ children }) {
   return (
     <html lang="en" suppressHydrationWarning={true} data-qb-installed="true">
-      <body
-        className={outfit.className}
-        data-new-gr-c-s-check-loaded="14.1226.0"
-        data-gr-ext-installed=""
-      >
+      <body className={outfit.className}>
+        <Head>
+          <title>{metadata.title}</title>
+          <meta name="description" content={metadata.description} />
+          <link rel="icon" href={metadata.icons.icon} />
+        </Head>
         <main>{children}</main>
         <Toaster />
       </body>

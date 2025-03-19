@@ -36,7 +36,7 @@ const StudentRecord = () => {
 
     // Reset form fields after submission
     setTitle("");
-    setSearch("");
+    setRequirements("");
     setInstructor("");
     setDueDate("");
   };
@@ -58,8 +58,8 @@ const StudentRecord = () => {
             <Input
               type="text"
               placeholder="Enter your Requirements"
-              value={title}
-              onChange={(e) => setSearch(e.target.value)}
+              value={requirements}
+              onChange={(e) => setRequirements(e.target.value)}
               className="w-full p-2 border border-gray-300 rounded-md focus:outline-none"
             />
           </div>
@@ -70,7 +70,7 @@ const StudentRecord = () => {
             <Input
               type="date"
               value={dueDate}
-              onChange={(e) => setSearch(e.target.value)}
+              onChange={(e) => setDueDate(e.target.value)}
               className="w-full p-2 border border-gray-300 rounded-md focus:outline-none"
             />
           </div>

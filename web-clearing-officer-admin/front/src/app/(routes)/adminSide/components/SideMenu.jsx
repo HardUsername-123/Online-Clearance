@@ -1,12 +1,22 @@
 import Link from "next/link";
 import React from "react";
-import { Menu, Book, Users, FileText, Settings, User, ChartNoAxesCombined } from "lucide-react";
+import {
+  Menu,
+  Book,
+  Users,
+  FileText,
+  Settings,
+  User,
+  ChartNoAxesCombined,
+} from "lucide-react";
 import { Avatar, AvatarImage, AvatarFallback } from "@/components/ui/avatar";
+import { usePathname } from "next/navigation";
 
 const CustomSideMenu = () => {
+  const pathName = usePathname();
   const sideMenuItems = [
     {
-      href: "/adminSide/",
+      href: "/adminSide",
       label: "Dashboard",
       icon: <ChartNoAxesCombined />,
     },
@@ -45,7 +55,13 @@ const CustomSideMenu = () => {
           <Link
             key={item.href}
             href={item.href}
-            className="flex items-center space-x-2 p-2 rounded transition-colors hover:bg-gradient-to-r hover:from-indigo-500 hover:to-purple-500 hover:text-white dark:hover:from-indigo-600 dark:hover:to-purple-600"
+            className={`flex items-center space-x-2 p-2 rounded transition-colors 
+              ${
+                pathName === item.href
+                  ? "bg-gradient-to-r from-indigo-500 to-purple-500 text-white dark:from-indigo-600 dark:to-purple-600"
+                  : "hover:bg-gray-400"
+              }
+              `}
           >
             {item.icon}
             <span>{item.label}</span>

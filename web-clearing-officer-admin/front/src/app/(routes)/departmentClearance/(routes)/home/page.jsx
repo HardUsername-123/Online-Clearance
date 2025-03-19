@@ -96,7 +96,7 @@ const MyHome = () => {
       </div>
 
       {/* Search Bar */}
-      <div className="flex items-center w-100 space-x-2 border-b border-gray-300 pb-2">
+      <div className="flex items-center w-100 space-x-2 border-gray-300 pb-2">
         <Search className="w-5 h-5 text-gray-500" />
         <Input
           type="text"
