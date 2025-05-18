@@ -94,9 +94,9 @@ const MyHome = () => {
       <div className="inline-flex justify-center">
         <GraduationCap /> <h1 className="text-2xl font-semibold"> Courses</h1>
       </div>
-
+<Card>
       {/* Search Bar */}
-      <div className="flex items-center w-100 space-x-2 border-gray-300 pb-2">
+      <div className="flex items-center w-100 space-x-2 border-gray-300 pb-2 ml-auto p-2">
         <Search className="w-5 h-5 text-gray-500" />
         <Input
           type="text"
@@ -108,7 +108,7 @@ const MyHome = () => {
       </div>
 
       {/* Requirement Cards (3 Columns x 3 Rows) */}
-      <div className="grid grid-cols-1 md:grid-cols-3 gap-6">
+      <div className="grid grid-cols-1 md:grid-cols-3 gap-6 p-5">
         {filteredRequirements.slice(0, 9).map((req, index) => (
           <Card
             key={index}
@@ -160,6 +160,9 @@ const MyHome = () => {
           </Card>
         ))}
       </div>
+</Card>
+
+
     </div>
   );
 };

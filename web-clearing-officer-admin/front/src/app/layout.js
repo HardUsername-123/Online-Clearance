@@ -7,7 +7,7 @@ import Head from "next/head";
 const outfit = Outfit({ subsets: ["latin"] });
 
 export const metadata = {
-  title: "ASCS",
+  // title: "ASCS",
   description: "An Automated Student Clearance System.",
   icons: {
     icon: "/old-logo.ico",
@@ -19,7 +19,7 @@ export default function RootLayout({ children }) {
     <html lang="en" suppressHydrationWarning={true} data-qb-installed="true">
       <body className={outfit.className}>
         <Head>
-          <title>{metadata.title}</title>
+          {/* <title>{metadata.title}</title> */}
           <meta name="description" content={metadata.description} />
           <link rel="icon" href={metadata.icons.icon} />
         </Head>

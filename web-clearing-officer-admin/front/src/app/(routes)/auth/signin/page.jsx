@@ -2,10 +2,22 @@
 
 import { IdCard, Lock, Phone } from "lucide-react";
 import Image from "next/image";
-import React from "react";
+import React, { useEffect } from "react";
 
 const Login = () => {
+  useEffect(() => {
+    document.title = "Sign In";
+  }, []);
   return (
+    <div
+    className="mx-auto max-w-screen-xl px-4 py-16 sm:px-6 lg:px-8"
+    style={{
+      backgroundImage: 'url("https://ncmc.edu.ph/img/home_cover.jpg")',
+      backgroundSize: "cover",
+      backgroundPosition: "center",
+      minHeight: "100vh", // Makes the background cover the full height of the viewport
+    }}
+  >
     <div className="mx-auto max-w-screen-xl px-4 py-16 sm:px-6 lg:px-8">
       <div className="mx-auto max-w-lg">
         {/* <h1 className="text-center text-2xl font-bold text-indigo-600 sm:text-3xl">
@@ -28,7 +40,7 @@ const Login = () => {
 
         <form
           action="/departmentClearance"
-          className="mt-6 mb-0 space-y-4 rounded-lg p-4 shadow-lg sm:p-6 lg:p-8"
+          className="mt-6 mb-0 space-y-4 border rounded-lg p-4 shadow-lg bg-white sm:p-6 lg:p-8"
         >
           <p className="text-center text-lg font-medium">
             Sign in to your account
@@ -42,7 +54,7 @@ const Login = () => {
             <div className="relative">
               <input
                 type="email"
-                className="w-full rounded-lg border-gray-200 p-4 pe-12 text-sm shadow-xs"
+                className="w-full rounded-lg border-gray-200 p-4 pe-12 text-sm border"
                 placeholder="Enter id number"
               />
 
@@ -60,7 +72,7 @@ const Login = () => {
             <div className="relative">
               <input
                 type="password"
-                className="w-full rounded-lg border-gray-200 p-4 pe-12 text-sm shadow-xs"
+                className="w-full rounded-lg border-gray-200 p-4 pe-12 text-sm border"
                 placeholder="Enter password"
               />
 
@@ -85,6 +97,7 @@ const Login = () => {
           </p>
         </form>
       </div>
+    </div>
     </div>
   );
 };

@@ -2,9 +2,12 @@
 
 import { IdCard, Lock, Phone } from "lucide-react";
 import Image from "next/image";
-import React from "react";
+import React, { useEffect } from "react";
 
 const Register = () => {
+    useEffect(() => {
+      document.title = "Register";
+    }, []);
   return (
     <div className="mx-auto max-w-screen-xl px-4 py-16 sm:px-6 lg:px-8">
       <div className="mx-auto max-w-lg">
@@ -28,7 +31,7 @@ const Register = () => {
 
         <form
           action="#"
-          className="mt-6 mb-0 space-y-4 rounded-lg p-4 shadow-lg sm:p-6 lg:p-8"
+          className="mt-6 mb-0 space-y-4 border rounded-lg p-4 shadow-lg sm:p-6 lg:p-8"
         >
           <p className="text-center text-lg font-medium">Sign Up</p>
 
@@ -40,7 +43,7 @@ const Register = () => {
             <div className="relative">
               <input
                 type="email"
-                className="w-full rounded-lg border-gray-200 p-4 pe-12 text-sm shadow-xs"
+                className="w-full rounded-lg border-gray-200 p-4 pe-12 text-sm border"
                 placeholder="Enter id number"
               />
 
@@ -58,7 +61,7 @@ const Register = () => {
             <div className="relative">
               <input
                 type="email"
-                className="w-full rounded-lg border-gray-200 p-4 pe-12 text-sm shadow-xs"
+                className="w-full rounded-lg border-gray-200 p-4 pe-12 text-sm border"
                 placeholder="Enter email"
               />
 
@@ -89,7 +92,7 @@ const Register = () => {
             <div className="relative">
               <input
                 type="email"
-                className="w-full rounded-lg border-gray-200 p-4 pe-12 text-sm shadow-xs"
+                className="w-full rounded-lg border-gray-200 p-4 pe-12 text-sm border"
                 placeholder="Enter phone number"
               />
 
@@ -107,7 +110,7 @@ const Register = () => {
             <div className="relative">
               <input
                 type="email"
-                className="w-full rounded-lg border-gray-200 p-4 pe-12 text-sm shadow-xs"
+                className="w-full rounded-lg border-gray-200 p-4 pe-12 text-sm border"
                 placeholder="EnterPassword"
               />
 
@@ -125,7 +128,7 @@ const Register = () => {
             <div className="relative">
               <input
                 type="password"
-                className="w-full rounded-lg border-gray-200 p-4 pe-12 text-sm shadow-xs"
+                className="w-full rounded-lg border-gray-200 p-4 pe-12 text-sm border"
                 placeholder="Enter confirm password"
               />
 

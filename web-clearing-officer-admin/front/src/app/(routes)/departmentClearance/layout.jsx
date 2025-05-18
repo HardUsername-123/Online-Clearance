@@ -75,7 +75,7 @@ export default function RootLayout({children}) {
             <CustomSideMenu />
 
             {/* Main Content */}
-            <main className="flex-1 p-4 bg-white dark:bg-gray-900 transition-colors">
+            <main className="flex-1 p-4 bg-slate-100 dark:bg-gray-900 transition-colors">
               {children}
             </main>
           </div>

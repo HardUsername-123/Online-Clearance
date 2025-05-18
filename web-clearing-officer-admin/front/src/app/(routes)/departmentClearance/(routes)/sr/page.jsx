@@ -2,6 +2,7 @@
 
 import React, { useState } from "react";
 import { Input } from "@/components/ui/input";
+import { Button } from "@/components/ui/button";
 import {
   Table,
   TableBody,
@@ -104,26 +105,26 @@ const StudentRecord = () => {
         <h1 className="text-2xl font-semibold"> Student's Record </h1>
       </div>
 
-      {/* Search Bar */}
-      <div className="flex items-center space-x-2 w-100 border-gray-300 pb-2">
-        <Search className="w-5 h-5 text-gray-500" />
-        <Input
-          type="text"
-          placeholder="Search students..."
-          value={search}
-          onChange={(e) => setSearch(e.target.value)}
-          className="w-full p-2 focus:outline-none"
-        />
-      </div>
-
       {/* Student Table */}
-      <Card className="shadow-lg overflow-hidden">
+      <Card className="shadow-xs overflow-hidden p-5">
+        {/* Search Bar */}
+        <div className="flex items-center space-x-2 w-100 border-gray-300 pb-2 p-2 ml-auto">
+          <Search className="w-5 h-5 text-gray-500" />
+          <Input
+            type="text"
+            placeholder="Search students..."
+            value={search}
+            onChange={(e) => setSearch(e.target.value)}
+            className="w-full p-2 focus:outline-none"
+          />
+        </div>
         <Table>
           <TableHeader>
             <TableRow className="">
               <TableHead className="text-left">Student</TableHead>
               <TableHead className="text-left">Email</TableHead>
               <TableHead className="text-left">Status</TableHead>
+               <TableHead className="text-left">Action</TableHead>
             </TableRow>
           </TableHeader>
           <TableBody>
@@ -177,6 +178,23 @@ const StudentRecord = () => {
                     </span>
                   </div>
                 </TableCell>
+              <TableCell>
+                <Button
+                  // onClick={() => {
+                  //   setEditUser(user);
+                  //   setOpen(true);
+                  // }}
+                  className="mr-2 bg-green-500 hover:bg-green-600"
+                >
+                 Sign
+                </Button>
+                <Button
+                  // onClick={() => deleteUser(user.id)}
+                  className="mr-2 bg-yellow-500 hover:bg-yellow-600"
+                >
+                  View
+                </Button>
+              </TableCell>
               </TableRow>
             ))}
           </TableBody>
