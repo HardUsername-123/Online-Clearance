@@ -70,7 +70,7 @@ export default function UserTable() {
         <h2 className="text-xl font-bold">Student Management</h2>
         <Dialog open={open} onOpenChange={setOpen}>
           <DialogTrigger asChild>
-            <Button>Add User</Button>
+            <Button className="bg-blue-500">Add User</Button>
           </DialogTrigger>
           <DialogContent>
             <DialogTitle>{editUser ? "Edit User" : "Add User"}</DialogTitle>
@@ -160,7 +160,7 @@ export default function UserTable() {
                     setEditUser(user);
                     setOpen(true);
                   }}
-                  className="mr-2"
+                  className="mr-2 bg-blue-500"
                 >
                   Edit
                 </Button>

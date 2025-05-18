@@ -1,8 +1,8 @@
-"use client";
+'use client';
 
-import React, { useState } from "react";
-import { Input } from "@/components/ui/input";
-import { Button } from "@/components/ui/button";
+import React, { useState } from 'react';
+import { Input } from '@/components/ui/input';
+import { Button } from '@/components/ui/button';
 import {
   Table,
   TableBody,
@@ -10,89 +10,90 @@ import {
   TableHead,
   TableHeader,
   TableRow,
-} from "@/components/ui/table";
-import { Card } from "@/components/ui/card";
-import { Search, Mail, CheckCircle, XCircle, ScrollText } from "lucide-react";
+} from '@/components/ui/table';
+import { Card } from '@/components/ui/card';
+import { Search, Mail, CheckCircle, XCircle, ScrollText } from 'lucide-react';
+import Link from 'next/link';
 
 const students = [
   {
     id: 1,
-    name: "John Doe",
-    email: "johndoe@example.com",
-    profilePic: "https://randomuser.me/api/portraits/men/1.jpg",
-    status: "Signed",
+    name: 'John Doe',
+    email: 'johndoe@example.com',
+    profilePic: 'https://randomuser.me/api/portraits/men/1.jpg',
+    status: 'Signed',
   },
   {
     id: 2,
-    name: "Jane Smith",
-    email: "janesmith@example.com",
-    profilePic: "https://randomuser.me/api/portraits/women/2.jpg",
-    status: "In Complete",
+    name: 'Jane Smith',
+    email: 'janesmith@example.com',
+    profilePic: 'https://randomuser.me/api/portraits/women/2.jpg',
+    status: 'Signed',
   },
   {
     id: 3,
-    name: "Alice Johnson",
-    email: "alicejohnson@example.com",
-    profilePic: "https://randomuser.me/api/portraits/women/3.jpg",
-    status: "Signed",
+    name: 'Alice Johnson',
+    email: 'alicejohnson@example.com',
+    profilePic: 'https://randomuser.me/api/portraits/women/3.jpg',
+    status: 'Signed',
   },
   {
     id: 4,
-    name: "Bob Brown",
-    email: "bobbrown@example.com",
-    profilePic: "https://randomuser.me/api/portraits/men/4.jpg",
-    status: "Missing",
+    name: 'Bob Brown',
+    email: 'bobbrown@example.com',
+    profilePic: 'https://randomuser.me/api/portraits/men/4.jpg',
+    status: 'Missing',
   },
   {
     id: 5,
-    name: "Jane Smith",
-    email: "janesmith@example.com",
-    profilePic: "https://randomuser.me/api/portraits/women/2.jpg",
-    status: "In Complete",
+    name: 'Jane Smith',
+    email: 'janesmith@example.com',
+    profilePic: 'https://randomuser.me/api/portraits/women/2.jpg',
+    status: 'Signed',
   },
   {
     id: 6,
-    name: "Alice Johnson",
-    email: "alicejohnson@example.com",
-    profilePic: "https://randomuser.me/api/portraits/women/3.jpg",
-    status: "Signed",
+    name: 'Alice Johnson',
+    email: 'alicejohnson@example.com',
+    profilePic: 'https://randomuser.me/api/portraits/women/3.jpg',
+    status: 'Signed',
   },
   {
     id: 7,
-    name: "Bob Brown",
-    email: "bobbrown@example.com",
-    profilePic: "https://randomuser.me/api/portraits/men/4.jpg",
-    status: "In Complete",
+    name: 'Bob Brown',
+    email: 'bobbrown@example.com',
+    profilePic: 'https://randomuser.me/api/portraits/men/4.jpg',
+    status: 'Signed',
   },
   {
     id: 8,
-    name: "Jane Smith",
-    email: "janesmith@example.com",
-    profilePic: "https://randomuser.me/api/portraits/women/2.jpg",
-    status: "Missing",
+    name: 'Jane Smith',
+    email: 'janesmith@example.com',
+    profilePic: 'https://randomuser.me/api/portraits/women/2.jpg',
+    status: 'Missing',
   },
   {
     id: 9,
-    name: "Alice Johnson",
-    email: "alicejohnson@example.com",
-    profilePic: "https://randomuser.me/api/portraits/women/3.jpg",
-    status: "Signed",
+    name: 'Alice Johnson',
+    email: 'alicejohnson@example.com',
+    profilePic: 'https://randomuser.me/api/portraits/women/3.jpg',
+    status: 'Signed',
   },
   {
     id: 10,
-    name: "Bob Brown",
-    email: "bobbrown@example.com",
-    profilePic: "https://randomuser.me/api/portraits/men/4.jpg",
-    status: "Missing",
+    name: 'Bob Brown',
+    email: 'bobbrown@example.com',
+    profilePic: 'https://randomuser.me/api/portraits/men/4.jpg',
+    status: 'Missing',
   },
 ];
 
 const StudentRecord = () => {
-  const [search, setSearch] = useState("");
+  const [search, setSearch] = useState('');
 
   const filteredStudents = students
     .filter(
-      (student) =>
+      student =>
         student.name.toLowerCase().includes(search.toLowerCase()) ||
         student.email.toLowerCase().includes(search.toLowerCase())
     )
@@ -101,8 +102,7 @@ const StudentRecord = () => {
   return (
     <div className="p-6 space-y-6">
       <div className="inline-flex justify-center">
-        <ScrollText />{" "}
-        <h1 className="text-2xl font-semibold"> Student's Record </h1>
+        <ScrollText /> <h1 className="text-2xl font-semibold"> Student's Record </h1>
       </div>
 
       {/* Student Table */}
@@ -114,7 +114,7 @@ const StudentRecord = () => {
             type="text"
             placeholder="Search students..."
             value={search}
-            onChange={(e) => setSearch(e.target.value)}
+            onChange={e => setSearch(e.target.value)}
             className="w-full p-2 focus:outline-none"
           />
         </div>
@@ -124,15 +124,12 @@ const StudentRecord = () => {
               <TableHead className="text-left">Student</TableHead>
               <TableHead className="text-left">Email</TableHead>
               <TableHead className="text-left">Status</TableHead>
-               <TableHead className="text-left">Action</TableHead>
+              <TableHead className="text-left">Action</TableHead>
             </TableRow>
           </TableHeader>
           <TableBody>
-            {filteredStudents.map((student) => (
-              <TableRow
-                key={student.id}
-                className="hover:bg-gray-50 transition"
-              >
+            {filteredStudents.map(student => (
+              <TableRow key={student.id} className="hover:bg-gray-50 transition">
                 {/* Profile */}
                 <TableCell>
                   <div className="flex items-center space-x-3">
@@ -141,9 +138,7 @@ const StudentRecord = () => {
                       alt={student.name}
                       className="w-10 h-10 rounded-full border"
                     />
-                    <span className="text-gray-800 font-medium">
-                      {student.name}
-                    </span>
+                    <span className="text-gray-800 font-medium">{student.name}</span>
                   </div>
                 </TableCell>
 
@@ -158,43 +153,39 @@ const StudentRecord = () => {
                 {/* Status */}
                 <TableCell>
                   <div className="flex items-center space-x-2">
-                    {student.status === "Signed" ? (
+                    {student.status === 'Signed' ? (
                       <CheckCircle className="w-6 h-6 text-green-500" />
-                    ) : student.status === "In Complete" ? (
-                      <XCircle className="w-6 h-6 text-yellow-500" />
                     ) : (
                       <XCircle className="w-6 h-6 text-red-500" />
                     )}
                     <span
                       className={`font-semibold ${
-                        student.status === "Signed"
-                          ? "text-green-600"
-                          : student.status === "In Complete"
-                          ? "text-yellow-600"
-                          : "text-red-600"
+                        student.status === 'Signed' ? 'text-green-600' : 'text-red-600'
                       }`}
                     >
                       {student.status}
                     </span>
                   </div>
                 </TableCell>
-              <TableCell>
-                <Button
-                  // onClick={() => {
-                  //   setEditUser(user);
-                  //   setOpen(true);
-                  // }}
-                  className="mr-2 bg-green-500 hover:bg-green-600"
-                >
-                 Sign
-                </Button>
-                <Button
-                  // onClick={() => deleteUser(user.id)}
-                  className="mr-2 bg-yellow-500 hover:bg-yellow-600"
-                >
-                  View
-                </Button>
-              </TableCell>
+                <TableCell>
+                  <Button
+                    // onClick={() => {
+                    //   setEditUser(user);
+                    //   setOpen(true);
+                    // }}
+                    className="mr-2 bg-green-500 hover:bg-green-600"
+                  >
+                    Sign
+                  </Button>
+                  <Link href={'/institutionalClearance'}>
+                    <Button
+                      // onClick={() => deleteUser(user.id)}
+                      className="mr-2 bg-yellow-500 hover:bg-yellow-600"
+                    >
+                      View
+                    </Button>
+                  </Link>
+                </TableCell>
               </TableRow>
             ))}
           </TableBody>

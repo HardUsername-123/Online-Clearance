@@ -1,10 +1,10 @@
-"use client";
+'use client';
 
-import React, { useState } from "react";
-import { Input } from "@/components/ui/input";
-import { Textarea } from "@/components/ui/textarea";
-import { Button } from "@/components/ui/button";
-import { Card, CardContent } from "@/components/ui/card";
+import React, { useState } from 'react';
+import { Input } from '@/components/ui/input';
+import { Textarea } from '@/components/ui/textarea';
+import { Button } from '@/components/ui/button';
+import { Card, CardContent } from '@/components/ui/card';
 import {
   Calendar,
   ClipboardList,
@@ -15,15 +15,15 @@ import {
   Mail,
   Calendar1,
   StickyNote,
-} from "lucide-react";
+} from 'lucide-react';
 
 const StudentRecord = () => {
-  const [title, setTitle] = useState("");
-  const [requirements, setRequirements] = useState("");
-  const [instructor, setInstructor] = useState("");
-  const [dueDate, setDueDate] = useState("");
+  const [title, setTitle] = useState('');
+  const [requirements, setRequirements] = useState('');
+  const [instructor, setInstructor] = useState('');
+  const [dueDate, setDueDate] = useState('');
 
-  const handleSubmit = (e) => {
+  const handleSubmit = e => {
     e.preventDefault();
 
     // Example: Logging form data (Replace this with an API call)
@@ -35,10 +35,10 @@ const StudentRecord = () => {
     });
 
     // Reset form fields after submission
-    setTitle("");
-    setRequirements("");
-    setInstructor("");
-    setDueDate("");
+    setTitle('');
+    setRequirements('');
+    setInstructor('');
+    setDueDate('');
   };
 
   return (
@@ -52,14 +52,12 @@ const StudentRecord = () => {
         <form onSubmit={handleSubmit} className="space-y-4">
           {/* Student Name */}
           <div className="space-y-2">
-            <label className="text-gray-700 font-medium">
-              Requirements Name
-            </label>
+            <label className="text-gray-700 font-medium">Requirements Name</label>
             <Input
               type="text"
               placeholder="Enter your Requirements"
               value={requirements}
-              onChange={(e) => setRequirements(e.target.value)}
+              onChange={e => setRequirements(e.target.value)}
               className="w-full p-2 border border-gray-300 rounded-md focus:outline-none"
             />
           </div>
@@ -70,7 +68,7 @@ const StudentRecord = () => {
             <Input
               type="date"
               value={dueDate}
-              onChange={(e) => setDueDate(e.target.value)}
+              onChange={e => setDueDate(e.target.value)}
               className="w-full p-2 border border-gray-300 rounded-md focus:outline-none"
             />
           </div>
