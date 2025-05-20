@@ -42,7 +42,7 @@ const CustomSideMenu = () => {
   ];
 
   return (
-    <aside className="hidden sm:block w-64 p-4 border-r bg-gray-50 dark:bg-gray-800 rounded-tr-lg rounded-br-lg">
+    <aside className="hidden sm:block w-64 p-4 border-r bg-gray-600 text-white dark:bg-gray-800 rounded-tr-lg rounded-br-lg">
       <div className="flex items-center space-x-3 p-4 border-b">
         <Avatar>
           <AvatarImage
@@ -64,7 +64,7 @@ const CustomSideMenu = () => {
               ${
                 pathName === item.href
                   ? "bg-gradient-to-r from-indigo-500 to-purple-500 text-white dark:from-indigo-600 dark:to-purple-600"
-                  : "hover:bg-gray-100"
+                  : "hover:bg-gray-300"
               }
               `}
           >

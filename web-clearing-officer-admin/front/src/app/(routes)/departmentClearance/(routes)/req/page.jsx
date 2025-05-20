@@ -55,7 +55,7 @@ const StudentRecord = () => {
             <label className="text-gray-700 font-medium">Requirements Name</label>
             <Input
               type="text"
-              placeholder="Enter your Requirements"
+              placeholder="Enter your Requisrements"
               value={requirements}
               onChange={e => setRequirements(e.target.value)}
               className="w-full p-2 border border-gray-300 rounded-md focus:outline-none"

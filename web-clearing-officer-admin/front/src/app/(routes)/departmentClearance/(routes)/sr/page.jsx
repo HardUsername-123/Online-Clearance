@@ -12,12 +12,13 @@ import {
   TableRow,
 } from '@/components/ui/table';
 import { Card } from '@/components/ui/card';
-import { Search, Mail, CheckCircle, XCircle, ScrollText } from 'lucide-react';
+import { Search, Mail, CheckCircle, XCircle, ScrollText, CircleAlert } from 'lucide-react';
 import Link from 'next/link';
 
 const students = [
   {
     id: 1,
+    id_no: '24-0334',
     name: 'John Doe',
     email: 'johndoe@example.com',
     profilePic: 'https://randomuser.me/api/portraits/men/1.jpg',
@@ -25,13 +26,15 @@ const students = [
   },
   {
     id: 2,
+    id_no: '20-0842',
     name: 'Jane Smith',
     email: 'janesmith@example.com',
     profilePic: 'https://randomuser.me/api/portraits/women/2.jpg',
-    status: 'Signed',
+    status: 'Not Cleared',
   },
   {
     id: 3,
+    id_no: '24-0334',
     name: 'Alice Johnson',
     email: 'alicejohnson@example.com',
     profilePic: 'https://randomuser.me/api/portraits/women/3.jpg',
@@ -39,6 +42,7 @@ const students = [
   },
   {
     id: 4,
+    id_no: '24-0334',
     name: 'Bob Brown',
     email: 'bobbrown@example.com',
     profilePic: 'https://randomuser.me/api/portraits/men/4.jpg',
@@ -46,6 +50,7 @@ const students = [
   },
   {
     id: 5,
+    id_no: '24-0334',
     name: 'Jane Smith',
     email: 'janesmith@example.com',
     profilePic: 'https://randomuser.me/api/portraits/women/2.jpg',
@@ -53,6 +58,7 @@ const students = [
   },
   {
     id: 6,
+    id_no: '24-0334',
     name: 'Alice Johnson',
     email: 'alicejohnson@example.com',
     profilePic: 'https://randomuser.me/api/portraits/women/3.jpg',
@@ -60,13 +66,15 @@ const students = [
   },
   {
     id: 7,
+    id_no: '24-0334',
     name: 'Bob Brown',
     email: 'bobbrown@example.com',
     profilePic: 'https://randomuser.me/api/portraits/men/4.jpg',
-    status: 'Signed',
+    status: 'Not Cleared',
   },
   {
     id: 8,
+    id_no: '24-0334',
     name: 'Jane Smith',
     email: 'janesmith@example.com',
     profilePic: 'https://randomuser.me/api/portraits/women/2.jpg',
@@ -74,6 +82,7 @@ const students = [
   },
   {
     id: 9,
+    id_no: '24-0334',
     name: 'Alice Johnson',
     email: 'alicejohnson@example.com',
     profilePic: 'https://randomuser.me/api/portraits/women/3.jpg',
@@ -81,6 +90,7 @@ const students = [
   },
   {
     id: 10,
+    id_no: '24-0334',
     name: 'Bob Brown',
     email: 'bobbrown@example.com',
     profilePic: 'https://randomuser.me/api/portraits/men/4.jpg',
@@ -121,6 +131,7 @@ const StudentRecord = () => {
         <Table>
           <TableHeader>
             <TableRow className="">
+              <TableHead className="text-left">ID Number</TableHead>
               <TableHead className="text-left">Student</TableHead>
               <TableHead className="text-left">Email</TableHead>
               <TableHead className="text-left">Status</TableHead>
@@ -130,6 +141,10 @@ const StudentRecord = () => {
           <TableBody>
             {filteredStudents.map(student => (
               <TableRow key={student.id} className="hover:bg-gray-50 transition">
+                {/* ID Number */}
+                <TableCell>
+                  <span className="text-gray-800 font-medium">{student.id_no}</span>
+                </TableCell>
                 {/* Profile */}
                 <TableCell>
                   <div className="flex items-center space-x-3">
@@ -155,12 +170,18 @@ const StudentRecord = () => {
                   <div className="flex items-center space-x-2">
                     {student.status === 'Signed' ? (
                       <CheckCircle className="w-6 h-6 text-green-500" />
+                    ) : student.status === 'Not Cleared' ? (
+                      <CircleAlert className="w-6 h-6 text-yellow-500" />
                     ) : (
                       <XCircle className="w-6 h-6 text-red-500" />
                     )}
                     <span
                       className={`font-semibold ${
-                        student.status === 'Signed' ? 'text-green-600' : 'text-red-600'
+                        student.status === 'Signed'
+                          ? 'text-green-600'
+                          : student.status === 'Not Cleared'
+                          ? 'text-yellow-600'
+                          : 'text-red-600'
                       }`}
                     >
                       {student.status}

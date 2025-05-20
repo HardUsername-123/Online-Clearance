@@ -12,7 +12,7 @@ export default function Dashboard() {
       </div>
       <div className="grid grid-cols-1 md:grid-cols-3 gap-4 p-6">
         <Card className="flex flex-row items-center p-4">
-          <Users className="w-12 h-15 text-blue-500" />
+          <Users className="w-12 h-15 text-blue-500" /> 
           <div className="ml-4">
             <CardTitle>Students</CardTitle>
             <CardContent className="text-2xl font-bold">1,250</CardContent>

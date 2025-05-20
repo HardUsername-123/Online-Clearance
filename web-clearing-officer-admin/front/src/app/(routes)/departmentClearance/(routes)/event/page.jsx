@@ -29,8 +29,8 @@ export default function EventsPage() {
   };
 
   return (
-    <div className="p-6 w-full border bg-white rounded-2xl shadow-lg">
-      <div className="container w-200 p-4">
+    <div className="p-6 w-[700px] border bg-white rounded-2xl shadow-lg">
+      <div className="container p-4">
         <h1 className="text-2xl font-semibold mb-4">Create Event</h1>
         <form onSubmit={handleSubmit} className="space-y-4">
           <div>
@@ -42,7 +42,7 @@ export default function EventsPage() {
               name="title"
               value={eventData.title}
               onChange={handleInputChange}
-              className="mt-2 border-gray-800 focus:border-blue-500"
+              className="w-full p-2 border border-gray-300 rounded-md focus:outline-none"
               required
             />
           </div>
@@ -56,7 +56,7 @@ export default function EventsPage() {
               name="venue"
               value={eventData.venue}
               onChange={handleInputChange}
-              className="mt-2 border-gray-800 focus:border-blue-500"
+              className="w-full p-2 border border-gray-300 rounded-md focus:outline-none"
               required
             />
           </div>
@@ -69,7 +69,7 @@ export default function EventsPage() {
               name="description"
               value={eventData.description}
               onChange={handleInputChange}
-              className="mt-2 border-gray-800 focus:border-blue-500"
+              className="w-full p-2 border border-gray-300 rounded-md focus:outline-none"
               rows="4"
               required
             />

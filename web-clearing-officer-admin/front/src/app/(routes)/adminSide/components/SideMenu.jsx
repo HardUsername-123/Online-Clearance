@@ -34,7 +34,7 @@ const CustomSideMenu = () => {
   ];
 
   return (
-    <aside className="hidden sm:block w-64 p-4 border-r  bg-slate-600 text-white">
+    <aside className="hidden sm:block w-64 p-4 border-r  bg-slate-600 text-white dark:bg-gray-800 rounded-tr-lg rounded-br-lg">
       <div className="flex items-center space-x-3 p-4 border-b">
         <Avatar>
           <AvatarImage
